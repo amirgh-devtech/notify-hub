@@ -1,8 +1,24 @@
 ﻿==================================================
 Project Structure: notify-hub
-Generated on: 2026-09-30 00:00:48
+Generated on: 2026-09-30 21:08:53
 ==================================================
 .
+├── .github
+│   └── workflows
+│       └── ci.yml
+├── .mypy_cache
+│   ├── 3.12
+│   │   └── cache.db
+│   ├── .gitignore
+│   └── CACHEDIR.TAG
+├── .ruff_cache
+│   ├── 0.8.6
+│   │   ├── 12289555044616049681
+│   │   ├── 13493069260005810744
+│   │   ├── 1667585396463017352
+│   │   └── 9246489989169460827
+│   ├── .gitignore
+│   └── CACHEDIR.TAG
 ├── migrations
 │   ├── versions
 │   │   └── .gitkeep
@@ -14,7 +30,7 @@ Generated on: 2026-09-30 00:00:48
 │   ├── dev.py
 │   └── seed.py
 ├── src
-│   └── notify-hub
+│   └── notify_hub
 │       ├── api
 │       │   ├── v1
 │       │   │   ├── routes
@@ -56,7 +72,7 @@ Generated on: 2026-09-30 00:00:48
 │       │   ├── filters
 │       │   │   ├── __init__.py
 │       │   │   ├── base.py
-│       │   │   └── rule.py
+│       │   │   └── rules.py
 │       │   ├── ingestors
 │       │   │   ├── __init__.py
 │       │   │   ├── base.py
@@ -93,9 +109,11 @@ Generated on: 2026-09-30 00:00:48
 │   │   └── __init__.py
 │   ├── unit
 │   │   ├── .gitkeep
-│   │   └── __init__.py
+│   │   ├── __init__.py
+│   │   └── test_smoke.py
 │   ├── __init__.py
 │   └── conftest.py
+├── .coverage
 ├── .dockerignore
 ├── .editorconfig
 ├── .env
@@ -103,6 +121,7 @@ Generated on: 2026-09-30 00:00:48
 ├── .gitattributes
 ├── .gitignore
 ├── .python-version
+├── justfile
 ├── LICENSE
 ├── main.py
 ├── pyproject.toml
