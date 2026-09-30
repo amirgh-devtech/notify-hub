@@ -2,7 +2,7 @@
 
 > Multi-channel notification hub — ingests from RSS / API / Webhook, filters, deduplicates, and delivers to Telegram / Slack / Discord / Email.
 
-[![CI](https://github.com/amirgh_devtech/notify-hub/.github/workflows/ci.yml/badge.svg)](https://github.com/amirgh_devtech/notify-hub/.github/workflows/ci.yml)
+[![CI](https://github.com/amirgh-devtech/notify-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/amirgh-devtech/notify-hub/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.12-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.133+-009688)
 ![License](https://img.shields.io/badge/license-MIT-green)
