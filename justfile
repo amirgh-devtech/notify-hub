@@ -1,7 +1,7 @@
-# notify-hub — task runner
+# notify-hub — task runner (Windows / PowerShell)
 # Usage: `just` or `just --list`
 
-set shell := ["bash", "-uc"]
+set shell := ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command"]
 set dotenv-load := true
 set dotenv-filename := ".env"
 
@@ -25,7 +25,8 @@ reinstall:
 
 # Full reset: nuke lock + venv, then reinstall
 reset:
-    rm -rf .venv uv.lock
+    Remove-Item -Recurse -Force .venv -ErrorAction SilentlyContinue
+    Remove-Item -Force uv.lock -ErrorAction SilentlyContinue
     uv lock
     uv sync --all-groups
 
@@ -67,7 +68,7 @@ test-all:
 # Run with coverage report (HTML)
 cov:
     uv run pytest --cov=notify_hub --cov-report=term-missing --cov-report=html
-    @echo "→ open htmlcov/index.html"
+    Write-Host "-> open htmlcov/index.html"
 
 # Run integration tests (needs infra up)
 test-int:
@@ -89,7 +90,7 @@ down-infra:
 logs-infra:
     docker compose logs -f postgres redis
 
-# Nuke infra volumes (⚠️ destroys data)
+# Nuke infra volumes (destroys data)
 nuke-infra:
     docker compose down -v
 
@@ -108,14 +109,6 @@ worker:
 # Run Celery beat (scheduler)
 beat:
     uv run celery -A notify_hub.workers.celery_app beat --loglevel=INFO
-
-# Run API + worker + beat in parallel (needs `just` + `&` support)
-dev:
-    @echo "Starting API + worker + beat..."
-    @just api & \
-    just worker & \
-    just beat & \
-    wait
 
 # ─────────────────────────────────────────────
 # Migrations (Alembic)
@@ -147,13 +140,19 @@ history:
 
 # Clean caches and build artifacts
 clean:
-    rm -rf .pytest_cache .mypy_cache .ruff_cache htmlcov .coverage coverage.xml
-    rm -rf dist build *.egg-info
-    find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+    Remove-Item -Recurse -Force .pytest_cache -ErrorAction SilentlyContinue
+    Remove-Item -Recurse -Force .mypy_cache -ErrorAction SilentlyContinue
+    Remove-Item -Recurse -Force .ruff_cache -ErrorAction SilentlyContinue
+    Remove-Item -Recurse -Force htmlcov -ErrorAction SilentlyContinue
+    Remove-Item -Force .coverage -ErrorAction SilentlyContinue
+    Remove-Item -Force coverage.xml -ErrorAction SilentlyContinue
+    Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue
+    Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue
+    Get-ChildItem -Recurse -Directory -Filter __pycache__ | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
 
 # ─────────────────────────────────────────────
 # Shortcuts
 # ─────────────────────────────────────────────
 
-# Alias
+# Alias: run lint + tests
 ci: lint test-all
