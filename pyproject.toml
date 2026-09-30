@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Multi-channel notification hub — ingests from RSS/API/Webhook, filters, and delivers to Telegram/Slack/Discord/Email."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-license = { text = "TBD" }
+license = { text = "MIT" }
 authors = [
     { name = "AmirMohammad Ghasemzadeh", email = "AmirGh.DevTech@gmail.com" },
 ]
