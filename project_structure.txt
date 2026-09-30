@@ -1,0 +1,110 @@
+﻿==================================================
+Project Structure: notify-hub
+Generated on: 2026-09-30 00:00:48
+==================================================
+.
+├── migrations
+│   ├── versions
+│   │   └── .gitkeep
+│   ├── env.py
+│   ├── README
+│   └── script.py.mako
+├── scripts
+│   ├── __init__.py
+│   ├── dev.py
+│   └── seed.py
+├── src
+│   └── notify-hub
+│       ├── api
+│       │   ├── v1
+│       │   │   ├── routes
+│       │   │   │   ├── __init__.py
+│       │   │   │   ├── channels.py
+│       │   │   │   ├── health.py
+│       │   │   │   ├── ingest.py
+│       │   │   │   └── rules.py
+│       │   │   ├── __init__.py
+│       │   │   └── router.py
+│       │   ├── __init__.py
+│       │   ├── app.py
+│       │   └── deps.py
+│       ├── core
+│       │   ├── __init__.py
+│       │   ├── config.py
+│       │   ├── idempotency.py
+│       │   ├── logging.py
+│       │   └── security.py
+│       ├── db
+│       │   ├── models
+│       │   │   ├── __init__.py
+│       │   │   ├── channel.py
+│       │   │   ├── delivery.py
+│       │   │   ├── event.py
+│       │   │   ├── rule.py
+│       │   │   └── source.py
+│       │   ├── __init__.py
+│       │   ├── base.py
+│       │   └── session.py
+│       ├── schemas
+│       │   ├── __init__.py
+│       │   ├── channel.py
+│       │   ├── common.py
+│       │   ├── delivery.py
+│       │   ├── event.py
+│       │   └── rule.py
+│       ├── services
+│       │   ├── filters
+│       │   │   ├── __init__.py
+│       │   │   ├── base.py
+│       │   │   └── rule.py
+│       │   ├── ingestors
+│       │   │   ├── __init__.py
+│       │   │   ├── base.py
+│       │   │   ├── http_api.py
+│       │   │   ├── rss.py
+│       │   │   └── webhook.py
+│       │   ├── notifiers
+│       │   │   ├── __init__.py
+│       │   │   ├── base.py
+│       │   │   ├── discord.py
+│       │   │   ├── email.py
+│       │   │   ├── slack.py
+│       │   │   └── telegram.py
+│       │   ├── __init__.py
+│       │   └── dedup.py
+│       ├── utils
+│       │   ├── __init__.py
+│       │   ├── hashing.py
+│       │   ├── text.py
+│       │   └── time.py
+│       ├── workers
+│       │   ├── __init__.py
+│       │   ├── celery_app.py
+│       │   ├── schedules.py
+│       │   └── tasks.py
+│       ├── __init__.py
+│       └── __main__.py
+├── tests
+│   ├── e2e
+│   │   ├── .gitkeep
+│   │   └── __init__.py
+│   ├── integration
+│   │   ├── .gitkeep
+│   │   └── __init__.py
+│   ├── unit
+│   │   ├── .gitkeep
+│   │   └── __init__.py
+│   ├── __init__.py
+│   └── conftest.py
+├── .dockerignore
+├── .editorconfig
+├── .env
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── .python-version
+├── LICENSE
+├── main.py
+├── pyproject.toml
+├── README.md
+└── uv.lock
