@@ -215,6 +215,8 @@ plugins = ["pydantic.mypy"]
 exclude = ["^migrations/versions/.*", "^build/", "^dist/"]
 
 [[tool.mypy.overrides]]
+# These modules don't ship type stubs yet — silence missing-import errors.
+# Kept here (even before use) to avoid churn later.
 module = ["celery.*", "feedparser.*", "discord_webhook.*", "testcontainers.*"]
 ignore_missing_imports = true
 
@@ -258,6 +260,7 @@ filterwarnings = [
 branch = true
 source = ["src/notify_hub"]
 omit = ["*/tests/*", "*/migrations/*", "*/__main__.py"]
+disable_warnings = ["no-data-collected", "module-not-imported"]
 
 [tool.coverage.report]
 exclude_lines = [

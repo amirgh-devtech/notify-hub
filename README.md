@@ -2,10 +2,10 @@
 
 > Multi-channel notification hub — ingests from RSS / API / Webhook, filters, deduplicates, and delivers to Telegram / Slack / Discord / Email.
 
-[![CI](https://github.com/<your-user>/notify-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-user>/notify-hub/actions/workflows/ci.yml)
+[![CI](https://github.com/amirgh_devtech/notify-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/amirgh_devtech/notify-hub/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.12-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688)
-![License](https://img.shields.io/badge/license-TBD-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
@@ -65,12 +65,12 @@ notify-hub/
 
 ```bash
 # 1. Clone
-git clone https://github.com/<your-user>/notify-hub.git
+git clone https://github.com/amirgh_devtech/notify-hub.git
 cd notify-hub
 
 # 2. Setup env
 cp .env.example .env
-# edit .env
+# edit .env with your tokens
 
 # 3. Start infra (Postgres + Redis)
 just up-infra
@@ -85,6 +85,26 @@ just migrate
 just dev
 ```
 
+## 🗺️ Roadmap
+
+```
+    ☑ Project skeleton
+    □ Config & logging
+    □ Database layer + migrations
+    □ API endpoints
+    □ Ingestors (RSS / API / Webhook)
+    □ Filters & dedup
+    □ Notifiers (Telegram / Slack / Discord / Email)
+    □ Celery workers
+    □ Docker + Compose
+    □ Tests + CI
+    □ Deploy guide
+```
+
+## 🤝 Contributing
+
+This is a personal portfolio project — PRs are welcome but may not be merged. Feel free to fork 😊.
+
 ## 📜 License
 
-TBD
+MIT — see LICENSE.

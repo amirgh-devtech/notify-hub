@@ -71,3 +71,24 @@ data/
 tmp/
 .celerybeat-schedule
 celerybeat.pid
+
+# === uv specific ===
+uv.lock.bak
+.uv/
+
+# === Hatch / build ===
+*.whl
+*.tar.gz
+!dist/.gitkeep
+
+# === Coverage ==
+.coverage
+coverage.xml
+htmlcov/
+
+# === Docker ===
+docker-compose.override.yml
+
+# === Local dev ===
+*.local
+.local/
